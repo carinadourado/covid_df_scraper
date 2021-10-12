@@ -24,7 +24,12 @@ Os boletins epidemiológicos são produzidos diariamente pela Diretoria de Vigil
 
 
 # Autoria
-Carina Dourado - para trabalho final de disciplina Pensamento Computacional, do Master em Jornalismo de Dados, Automação e Data Storytelling, do Insper.
+Carina Dourado 
+
+# Sobre
+Trabalho final do Master em Jornalismo de Dados, Automação e Data Storytelling, do Insper, das disciplinas
+- Pensamento Computacional - professor: [Álvaro Justen (Turicas)](https://github.com/turicas)
+- Transparência, reprodutibilidade e uso ético de dados - professoras: [Natália Mazotte](https://github.com/ncortezrj) e [Carla Vieira](https://github.com/carlaprv) 
 
 # Manutenção
-Última atualização: 11/10/2021
+Última atualização: 12/10/2021

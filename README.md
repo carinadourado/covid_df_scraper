@@ -1,5 +1,5 @@
 # Covid DF Scraper
-Este repositório contém o código para raspagem de dados dos Boletins Covid-19 divulgados pelo Governo do Distrito Federal (GDF). O código acessa a html da divulgação dos boletins epidemiológicos divulgados diariamente, coleta os links dos boletins, agrupa os informes e links de cada data e cria uma tabela csv com os dados coletados automaticamente, divulgados em 2021. O projeto pode ser adaptado para outros sites que divulguem boletins que necessitem ser baixados periodicamente.
+Este repositório contém o código para raspagem de dados dos Boletins Covid-19 divulgados pelo Governo do Distrito Federal (GDF). O código acessa a html da divulgação dos boletins epidemiológicos divulgados diariamente, coleta os links dos boletins de acordo com cada data divulgada, agrupa os informes, datas e links e cria uma tabela csv com os dados coletados automaticamente. Apenas para os dados divulgados em 2021. O projeto pode ser adaptado para outros sites que divulguem informações que necessitem ser baixados periodicamente.
 
 # Metodologia
 Programa que executa processo ETL - Extract, Transform, Load:
@@ -14,12 +14,13 @@ Os boletins epidemiológicos são produzidos diariamente pela Diretoria de Vigil
 
 |         Variável       |      Definição        |
 |------------------------|-------------------------------|
-|url	  |endereço do site a ser raspado |
-|html     |html já codificado		  	 |
-| links   |Lista de dicionários que agrupam chaves e valores dos números dos informes e links dos boletins|
-|tags_a   |tags `<a>` encontradas na raspagem|
-|informe  |informativos com seus devidos números de identificação|
-|link     |links correspondentes a cada informativo	|
+|url|endereço do site a ser raspado|
+|html|html já codificado|
+|tags_p|Lista de objetos contidos na tag `<p>`|
+|data|Lista com datas de divulgação dos boletins|
+|numero_informe| Número do boletim|
+|link|Lista de links correspondentes a cada informe|
+|registros|Dicionário com chaves: data, número_informe e link|
 
 
 # Autoria

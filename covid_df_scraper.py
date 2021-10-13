@@ -3,6 +3,18 @@ import requests
 from bs4 import BeautifulSoup
 
 url = "https://www.saude.df.gov.br/boletinsinformativos-divep-cieves/"
+meses = {"janeiro":"01",
+         "fevereiro":"02",
+         "março":"03",
+         "abril":"04",
+         "maio":"05",
+         "junho":"06",
+         "julho":"07",
+         "agosto":"08",
+         "setembro":"09",
+         "outubro":"10",
+         "novembro":"11",
+         "dezembro":"12"}
 resposta = requests.get(url)  
 html = resposta.text 
 soup = BeautifulSoup(html, "html.parser")
@@ -22,36 +34,9 @@ for tag_p in tags_p:
     elif "tese diária de óbitos" in tag_p.text:
         data = tag_p.text.split(" em ")[1].replace(" de 2021", "").replace("º", "").strip()
         data = data.split()
-        data_num = {"janeiro":"1", "fevereiro":"2", "março":"3", "abril":"4", 
-                    "maio":"5", "junho":"6","julho":"7", "agosto":"8", 
-                    "setembro":"9", "outubro":"10", "novembro":"11", "dezembro":"12"}
-        for mes_numero in data:
-          if data[2] == "janeiro":
-            mes_numero = "1"
-          elif data[2] == "fevereiro" :
-            mes_numero = "2"
-          elif data[2] == "março":
-            mes_numero = "3"
-          elif data[2] == "abril":
-            mes_numero = "4"
-          elif data[2] == "maio":
-            mes_numero = "5"
-          elif data[2] == "junho":
-            mes_numero = "6"
-          elif data[2] == "julho":
-            mes_numero = "7"
-          elif data[2] == "agosto":
-            mes_numero = "8"
-          elif data[2] == "setembro":
-            mes_numero = "9"
-          elif data[2] == "outubro":
-            mes_numero = "10" 
-          elif data[2] == "novembro":
-            mes_numero == "11"
-          elif data[2] == "dezembro":
-            mes_numero = "12"
+        mes_numero = meses[data[2]]
         data = (f"{data[0]}/{mes_numero}/21")
 if data is not None and numero_informe is not None and link is not None:
     registros.append({"data": data, "numero": numero_informe, "link": link})
     df = pd.DataFrame(registros)
-    df.to_csv('boletins_covid.csv') 
+    df.to_csv('boletins_covid.csv')

@@ -7,6 +7,9 @@ Programa que executa processo ETL - Extract, Transform, Load:
 - TRASNFORM: limpeza de dados e seleção do número do informe e do link dos boletins epidemiológicos
 - LOAD: salva os dados extraídos em uma planilha csv
 
+**Bibliotecas usadas:** pandas, requests e BeautifulSoup
+**Método:** baixa código HTML, localiza links pela única `tag <div id="conteudo">`, localiza `tags-children p`, para então localizar "Informativo" e criar a variável `data`. Depois, localizar o "Informe nº", para raspar os dados e criar as variáveis `numero_informe` e `link`. Verificou-se em tags `a` com atributos `href` palavras que não foram totalmente linkadas. Por isso, foi necessário localizar algumas variáveis `numero_informe` e `link `pela palavra cortada "nforme nº". Em outros casos, foi verificado que não havia a palavra "Informativo" para localizar uma data, sendo necessário localizar pela expressão "tese diária de óbitos". Depois das correções, foi usado um dicionário com chaves de meses por extenso, com valores dos meses numéricos para padronizar a data apenas com números. Depois, foi criado um dicionário e arquivo csv, com colunas com data de publicação, número do informe e link que leva para o download do arquivo em pdf, divulgado pela Secretaria de Saúde do DF. Apenas links de 2021.
+
 # Fonte das informações
 Os boletins epidemiológicos são produzidos diariamente pela Diretoria de Vigilância Epidemiológica da Subsecretaria de Vigilância à Saúde da Secretaria de Saúde do Distrito Federal. A divulgação é feita pelo site: https://www.saude.df.gov.br/boletinsinformativos-divep-cieves.
 

@@ -19,7 +19,7 @@ resposta = requests.get(url)
 html = resposta.text 
 soup = BeautifulSoup(html, "html.parser")
 registros = []
-div = soup.find("div", {"id": "conteudo"}) #localizar pela única tag id:conteudo
+div = soup.find("div", {"id": "conteudo"}) #localizar pela única tag <div id="conteudo">
 data = numero_informe = link = None
 tags_p = div.findChildren("p") #usar tag-children p
 for tag_p in tags_p:

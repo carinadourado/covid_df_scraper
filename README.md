@@ -35,4 +35,5 @@ Trabalho final do Master em Jornalismo de Dados, Automação e Data Storytelling
 - Transparência, reprodutibilidade e uso ético de dados - professoras: [Natália Mazotte](https://github.com/ncortezrj) e [Carla Vieira](https://github.com/carlaprv) 
 
 # Manutenção
-Última atualização: 18/10/2021
+Última atualização: 19/10/2021
+* Correção no código para aceitar novos parâmetros inseridos no html da página
